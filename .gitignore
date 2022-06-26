@@ -155,4 +155,5 @@ visualize_graph.py
 infer_for_bert.py
 *.graph
 *.graph_sdat
+*.sentic
 .DS_store
