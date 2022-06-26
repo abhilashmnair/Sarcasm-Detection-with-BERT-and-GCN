@@ -3,6 +3,7 @@
 This repository contains the code used in our paper:
 
 **Sarcasm Detection using Bidirectional Encorder Representations for Transformers and Graph Convolutional Network**
+
 Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan
 
 ## Requirements
@@ -15,13 +16,21 @@ Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan
 
 ## Usage
 - Install the dependencies
-`pip3 install -r requirements.txt`
+```bash
+pip3 install -r requirements.txt
+```
 
 - Download spaCy language model
-`python3 -m spacy download en`
+```bash
+python3 -m spacy download en
+```
 
 - Generate adjacency and affective dependency graphs
-`python3 graph.py`
+```bash
+python3 graph.py
+```
 
 - Train the model. Optional arguments can be found in `train.py`
-`python3 train.py`
+```bash
+python3 train.py
+```
