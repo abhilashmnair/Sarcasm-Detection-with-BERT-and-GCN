@@ -1,0 +1,7 @@
+spacy
+numpy
+torch
+torchvision
+pytorch-pretrained-bert
+scikit-learn
+matplotlib
