@@ -34,3 +34,6 @@ python3 graph.py
 ```bash
 python3 train.py
 ```
+
+# LICENCE
+This repository is licensed under MIT License. See [LICENSE](https://github.com/abhilashmnair/Sarcasm-Detection-with-BERT-and-GCN/blob/main/LICENSE) for full licensing text.
