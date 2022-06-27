@@ -6,6 +6,8 @@ This repository contains the code used in our paper:
 
 Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan, Dr. Anuraj Mohan
 
+---
+
 ## Requirements
 - numpy
 - spacy
@@ -13,6 +15,8 @@ Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan, Dr. Anuraj Mohan
 - scikit-learn
 - matplotlib
 - pytorch-pretrained-bert
+
+---
 
 ## Usage
 - Install the dependencies
@@ -34,6 +38,13 @@ python3 graph.py
 ```bash
 python3 train.py
 ```
+---
+
+# CREDITS
+- The affective knowledge used in this work is from [SenticNet](https://sentic.net/).
+- The code in this repository partially relies on [ADGCN](https://github.com/BinLiang-NLP/ADGCN-Sarcasm) and [SenticGCN](https://github.com/BinLiang-NLP/Sentic-GCN).
+
+---
 
 # LICENCE
 This repository is licensed under MIT License. See [LICENSE](https://github.com/abhilashmnair/Sarcasm-Detection-with-BERT-and-GCN/blob/main/LICENSE) for full licensing text.
