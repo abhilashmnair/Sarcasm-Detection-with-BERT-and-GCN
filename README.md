@@ -1,4 +1,4 @@
-# Sarcasm Detection using BERT and GCN
+# Sarcasm Detection using Bidirectional Encoder Representation for Transformers and Graph Convolutional Network
 
 This repository contains the code used in our paper:
 
