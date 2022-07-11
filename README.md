@@ -1,8 +1,8 @@
-# Sarcasm Detection using Bidirectional Encoder Representation for Transformers and Graph Convolutional Network
+# Sarcasm Detection using Bidirectional Encoder Representations from Transformers and Graph Convolutional Network
 
 This repository contains the code used in our paper:
 
-**Sarcasm Detection using Bidirectional Encorder Representations for Transformers and Graph Convolutional Network** submitted at ICMLDE '22, UPES, Dehradun, India
+**Sarcasm Detection using Bidirectional Encorder Representations from Transformers and Graph Convolutional Network** submitted at ICMLDE '22, UPES, Dehradun, India
 
 Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan, Dr. Anuraj Mohan
 
