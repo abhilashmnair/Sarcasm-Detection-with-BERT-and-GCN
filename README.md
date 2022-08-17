@@ -2,7 +2,7 @@
 
 This repository contains the code used in our paper:
 
-**Sarcasm Detection using Bidirectional Encorder Representations from Transformers and Graph Convolutional Network**
+**Sarcasm Detection using Bidirectional Encoder Representations from Transformers and Graph Convolutional Network**
 
 <b>Anuraj Mohan, Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan</b></br>
 <i>Department of Computer Science and Engineering, NSS College of Engineering, Palakkad, Kerala, India</i>
