@@ -4,7 +4,7 @@ This folder contains the datasets used for this project.
 
 - **riloff** : collected by Ellen Riloff, available for download on the [publications' page](http://www.cs.utah.edu/~riloff/publications_chron.html), contains unbalanced set of sarcastic and non-sarcastic tweets. Since this is the project's oldest dataset, many tweets are a bit outdated and have been removed since 2013 when the tweet IDs were initially collected.
 
-- **headlines** : collected by Rishab Misra, available in [Kaggle](https://www.kaggle.com/rmisra/news-headlines-dataset-for-sarcasm-detection) contains news headlines on sarcstic source, [TheOnion](https://www.theonion.com/) and non-sarcastic headlines collected from [HuffPost](https://www.huffingtonpost.com/).
+- **headlines** : collected by Rishab Misra, available in [Kaggle](https://www.kaggle.com/rmisra/news-headlines-dataset-for-sarcasm-detection) contains news headlines on sarcastic source, [TheOnion](https://www.theonion.com/) and non-sarcastic headlines collected from [HuffPost](https://www.huffingtonpost.com/).
 
 The contents of the dataset are given below:
 
