@@ -2,9 +2,10 @@
 
 This repository contains the code used in our paper:
 
-**[Sarcasm Detection using Bidirectional Encoder Representations from Transformers and Graph Convolutional Network](https://www.sciencedirect.com/science/article/pii/S1877050922024991)**
+<h3><b><a href = "https://www.sciencedirect.com/science/article/pii/S1877050922024991">Sarcasm Detection using Bidirectional Encoder Representations from Transformers and Graph Convolutional Network</a></b></h3>
+<b>International Conference on Machine Learning and Data Mining (ICMLDE), 2022</b>
 
-<b>Anuraj Mohan, Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan</b></br>
+Anuraj Mohan, Abhilash M Nair, Bhadra Jayakumar, Sanjay Muraleedharan</br>
 <i>Department of Computer Science and Engineering, NSS College of Engineering, Palakkad, Kerala, India</i>
 
 ---
