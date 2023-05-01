@@ -17,7 +17,7 @@ def load_sentic_word():
     fp.close()
     return senticNet
 
-def dependency_adj_matrix(text, senticNet):
+def sentic_dependency_adj_matrix(text, senticNet):
     document = nlp(text)
     seq_len = len(text.split())
     matrix = np.zeros((seq_len, seq_len)).astype('float32')
@@ -46,7 +46,7 @@ def process_sdat(filename):
     print('Generating sentic dependancy graph...')
     for i in tqdm((range(0, len(lines), 2))):
         text = lines[i].lower().strip()
-        adj_matrix = dependency_adj_matrix(text, senticNet)
+        adj_matrix = sentic_dependency_adj_matrix(text, senticNet)
         idx2graph[i] = adj_matrix
     pickle.dump(idx2graph, fout)
     print('Done!')
