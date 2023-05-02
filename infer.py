@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import numpy as np
 
 from pytorch_pretrained_bert import BertModel
-from data_utils_bert import Tokenizer4Bert, pad_and_truncate
+from data_utils import Tokenizer4Bert, pad_and_truncate
 from models import BERTGCN
 from graph import load_sentic_word, sentic_dependency_adj_matrix, dependency_adj_matrix
 
@@ -35,7 +35,7 @@ class Inferer:
         self.model.eval()
         torch.autograd.set_grad_enabled(False)
 
-    def evaluate(self, raw_text, aspect):
+    def evaluate(self, raw_text):
         senticNet = load_sentic_word()
 
         text_indices = self.tokenizer.text_to_sequence(raw_text.lower())
