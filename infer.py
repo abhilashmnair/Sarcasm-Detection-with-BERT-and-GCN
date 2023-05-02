@@ -9,6 +9,8 @@ from data_utils import Tokenizer4Bert, pad_and_truncate
 from models import BERTGCN
 from graph import load_sentic_word, sentic_dependency_adj_matrix, dependency_adj_matrix
 
+import warnings
+warnings.filterwarnings('ignore')
 
 class Inferer:
     """A simple inference example"""
@@ -59,11 +61,11 @@ class Inferer:
             'text_bert_indices': concat_bert_indices,
             'bert_segments_indices': concat_segments_indices,
             'text_indices': text_indices,
-            'dependency_grap': dependency_graph,
+            'dependency_graph': dependency_graph,
             'affective_graph': sdat_graph,
         }
 
-        t_inputs = [data[col].to(opt.device) for col in self.opt.inputs_cols]
+        t_inputs = [data[col].to(self.opt.device) for col in self.opt.inputs_cols]
         t_outputs = self.model(t_inputs)
 
         t_probs = F.softmax(t_outputs, dim=-1).cpu().numpy()
@@ -81,7 +83,7 @@ if __name__ == '__main__':
         'bertgcn': BERTGCN,
     }
     input_colses = {
-        'bertgcn': ['text_bert_indices', 'text_indices', 'aspect_indices', 'bert_segments_indices', 'left_indices', 'sdat_graph'],
+        'bertgcn': ['text_bert_indices', 'text_indices', 'bert_segments_indices', 'affective_graph', 'dependency_graph'],
     }
     class Option(object): pass
     opt = Option()
@@ -91,18 +93,16 @@ if __name__ == '__main__':
     opt.dataset = dataset
     opt.state_dict_path = model_state_dict_paths[opt.model_name]
     opt.bert_dim = 768
-    opt.hidden_dim = 300
-    opt.polarities_dim = 3
+    opt.hidden_dim = 768
+    opt.polarities_dim = 2
     opt.max_seq_len = 85
     opt.pretrained_bert_name = 'bert-base-uncased'
     opt.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     raw_text = 'Food is always fresh and hot - ready to eat !'
-    aspect = 'food'
 
     print('The input are as follows:')
     print('Sentence:', raw_text)
-    print('Aspect:', aspect)
 
     inf = Inferer(opt)
 
