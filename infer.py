@@ -99,10 +99,9 @@ if __name__ == '__main__':
     opt.pretrained_bert_name = 'bert-base-uncased'
     opt.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    raw_text = 'Food is always fresh and hot - ready to eat !'
+    raw_text = input('Enter a sentence to check : ')
 
-    print('The input are as follows:')
-    print('Sentence:', raw_text)
+    print(f'The input is "{raw_text}"')
 
     inf = Inferer(opt)
 
