@@ -6,7 +6,7 @@ import numpy as np
 
 from pytorch_pretrained_bert import BertModel
 from data_utils_bert import Tokenizer4Bert, pad_and_truncate
-from models import SenticGCN_BERT
+from models import BERTGCN
 from graph import load_sentic_word, sentic_dependency_adj_matrix, dependency_adj_matrix
 
 
@@ -75,17 +75,17 @@ if __name__ == '__main__':
     dataset = 'headlines'
     # set your trained models here
     model_state_dict_paths = {
-        'senticgcn_bert': './saved_models/bertgcn_'+dataset+'.pkl',
+        'bertgcn': './saved_models/bertgcn_'+dataset+'.pkl',
     }
     model_classes = {
-        'senticgcn_bert': SenticGCN_BERT,
+        'bertgcn': BERTGCN,
     }
     input_colses = {
-        'senticgcn_bert': ['text_bert_indices', 'text_indices', 'aspect_indices', 'bert_segments_indices', 'left_indices', 'sdat_graph'],
+        'bertgcn': ['text_bert_indices', 'text_indices', 'aspect_indices', 'bert_segments_indices', 'left_indices', 'sdat_graph'],
     }
     class Option(object): pass
     opt = Option()
-    opt.model_name = 'senticgcn_bert'
+    opt.model_name = 'bertgcn'
     opt.model_class = model_classes[opt.model_name]
     opt.inputs_cols = input_colses[opt.model_name]
     opt.dataset = dataset
