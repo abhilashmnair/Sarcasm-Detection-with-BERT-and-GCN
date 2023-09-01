@@ -56,16 +56,25 @@ class Inferer:
         sdat_graph = np.pad(sdat_graph, \
                     ((0,self.tokenizer.max_seq_len-sdat_graph.shape[0]),(0,self.tokenizer.max_seq_len-sdat_graph.shape[0])), 'constant')
         sdat_graph = torch.tensor([sdat_graph])
+        concat_bert_indices = torch.tensor(np.reshape(concat_bert_indices, (1,85)))
+        concat_segments_indices = torch.tensor(np.reshape(concat_segments_indices,(1,85)))
 
         data = {
-            'text_bert_indices': concat_bert_indices,
-            'bert_segments_indices': concat_segments_indices,
-            'text_indices': text_indices,
+            'text_bert_indices': torch.tensor(concat_bert_indices),
+            'bert_segments_indices': torch.tensor(concat_segments_indices),
+            'text_indices': torch.tensor(text_indices),
             'dependency_graph': dependency_graph,
             'affective_graph': sdat_graph,
         }
-
-        t_inputs = [data[col].to(self.opt.device) for col in self.opt.inputs_cols]
+		
+		
+        #print(self.opt.inputs_cols)
+        #print(data)
+        #t_inputs = [data[col].to(self.opt.device) for col in self.opt.inputs_cols]
+        #torch.Size([16, 85]), torch.Size([16, 85]), torch.Size([16, 85, 85]), torch.Size([16, 85, 85])]
+        t_inputs = [data[col].to(self.opt.device) for col in ['text_bert_indices', 'bert_segments_indices', 'dependency_graph', 'affective_graph']]
+        inp_shapes = [data[col].shape for col in ['text_bert_indices', 'bert_segments_indices', 'dependency_graph', 'affective_graph']]
+        print("\n\n\n\n\ntest input:",inp_shapes)
         t_outputs = self.model(t_inputs)
 
         t_probs = F.softmax(t_outputs, dim=-1).cpu().numpy()
@@ -109,6 +118,6 @@ if __name__ == '__main__':
 
     t_probs = inf.evaluate(raw_text)
     infer_label = t_probs.argmax(axis=-1)[0] - 1
-    label_dict = {-1: 'Non-Sarcastic', 1: 'Sarcastic'}
+    label_dict = {-1: 'Non-Sarcastic', 0: 'Sarcastic'}
 
     print('The test results is:', infer_label, label_dict[infer_label])
