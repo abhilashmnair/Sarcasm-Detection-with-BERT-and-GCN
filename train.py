@@ -170,7 +170,12 @@ class Instructor:
                     t_outputs_all = torch.cat((t_outputs_all, t_outputs), dim=0)
 
         acc = n_correct / n_total
-        f1 = metrics.f1_score(t_targets_all.cpu(), torch.argmax(t_outputs_all, -1).cpu(), labels = np.unique(torch.argmax(t_outputs_all, -1)), average='macro')
+        f1 = metrics.f1_score(
+            t_targets_all.cpu(),  # Move the target tensor to the CPU
+            torch.argmax(t_outputs_all, -1).cpu(),  # Move output tensor to the CPU
+            labels=np.unique(torch.argmax(t_outputs_all.cpu(), -1)),  # Ensure unique labels are computed on the CPU
+            average='macro'
+        )
         return acc, f1
 
     def run(self):
